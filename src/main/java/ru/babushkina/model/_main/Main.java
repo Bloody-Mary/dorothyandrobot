@@ -5,14 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.text.BreakIterator;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -42,7 +37,6 @@ public class Main {
         try {
             List<String> lines = Files.readAllLines(Path.of(filePath));
             List<String> unknownWords = findUnknownWords(lines);
-
             if (unknownWords.size() >= 2) {
                 createFileInFolder(currentFolder, unknownWords.get(0));
                 createFileInFolder(currentFolder, unknownWords.get(1));
@@ -103,20 +97,11 @@ public class Main {
     }
 
     private static List<String> getAllWords(List<String> lines) {
-        List<String> allWords = new ArrayList<>();
-        for (String line : lines) {
-            BreakIterator iterator = BreakIterator.getWordInstance(Locale.US);
-            iterator.setText(line);
-            int start = iterator.first();
-
-            for (int end = iterator.next(); end != BreakIterator.DONE; start = end, end = iterator.next()) {
-                String word = line.substring(start, end).trim().replaceAll("[^a-zA-Z]", "");
-                if (word.length() > 0) {
-                    allWords.add(word);
-                }
-            }
-        }
-        return allWords;
+        return lines.stream()
+                .flatMap(line -> Arrays.stream(line.split("\\s+")))
+            .map(word -> word.replaceAll("[^a-zA-Z]", ""))
+            .filter(word -> !word.isEmpty())
+            .collect(Collectors.toList());
     }
 
     private static void processFileInFolder(File folder, String fileName, List<String> allWords, boolean isEvenVowels) throws IOException {
