@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0512a5e-f976-4c40-9fdb-519c866278d4" name="Changes" comment="Created class TextProcessor and added methods findUnknownWords, hasNumbers">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/babushkina/dorothyandrobotapp/model/CustomFileReader.java" afterDir="false" />
+    <list default="true" id="f0512a5e-f976-4c40-9fdb-519c866278d4" name="Changes" comment="Created class CustomFileReader">
       <change afterPath="$PROJECT_DIR$/src/main/java/ru/babushkina/dorothyandrobotapp/model/CustomFileWriter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/ru/babushkina/dorothyandrobotapp/model/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/babushkina/dorothyandrobotapp/model/WordProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/babushkina/dorothyandrobotapp/dataReader/FileReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/babushkina/dorothyandrobotapp/processing/TextProcessor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/babushkina/dorothyandrobotapp/processing/TextProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/babushkina/dorothyandrobotapp/model/WordProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/babushkina/dorothyandrobotapp/utils/FileCreator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/babushkina/dorothyandrobotapp/utils/FileDeleter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/babushkina/dorothyandrobotapp/utils/WriteToFile.java" beforeDir="false" />
@@ -154,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692431096484</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Created class CustomFileReader and method readLines">
+      <option name="closed" value="true" />
+      <created>1692547485316</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1692547485316</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -164,8 +165,10 @@
     <MESSAGE value="Created class TextProcessor and added methods findUnknownWords, hasNumbers, getAllWords" />
     <MESSAGE value="Created class FileDeleter and added method deleteDirectory" />
     <MESSAGE value="Created class FileCreator and added methods createDataFolderIfNotExists, createCurrentFolder, createFileInFolder and createPunctuationFileInFolder" />
-    <MESSAGE value="Created class TextProcessor and added methods findUnknownWords, hasNumbers" />
     <MESSAGE value="Created class WriteToFile and methods writeDataToFile and writePunctuationToFile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created class WriteToFile and methods writeDataToFile and writePunctuationToFile" />
+    <MESSAGE value="Created class TextProcessor and added methods findUnknownWords, hasNumbers" />
+    <MESSAGE value="Created class CustomFileReader" />
+    <MESSAGE value="Created class CustomFileReader and method readLines" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created class CustomFileReader and method readLines" />
   </component>
 </project>
