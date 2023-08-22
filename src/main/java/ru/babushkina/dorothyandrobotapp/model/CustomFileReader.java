@@ -1,20 +1,17 @@
 package ru.babushkina.dorothyandrobotapp.model;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
 
 public class CustomFileReader {
-    public String readFile(String filename) {
-        StringBuilder sb = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                sb.append(line).append("\n");
-            }
+    public List<String> readLines(String filePath) {
+        try {
+            return Files.readAllLines(Path.of(filePath));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Ошибка при чтении файла: " + e.getMessage());
+            return null;
         }
-        return sb.toString();
     }
 }
