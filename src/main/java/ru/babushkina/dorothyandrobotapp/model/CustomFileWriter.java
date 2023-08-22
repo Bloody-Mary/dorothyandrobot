@@ -137,8 +137,8 @@ public class CustomFileWriter {
     private int countVowels(String word) {
         String vowels = "aeiouAEIOU";
         int count = 0;
-        for (char c : word.toCharArray()) {
-            if (vowels.indexOf(c) != -1) {
+        for (int i = 0; i < word.length(); i++) {
+            if (vowels.indexOf(word.charAt(i)) != -1) {
                 count++;
             }
         }
