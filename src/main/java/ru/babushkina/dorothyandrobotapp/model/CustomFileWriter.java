@@ -14,12 +14,7 @@ public class CustomFileWriter {
 
     public File createCurrentFolder(String parentFolder, String currentDate) {
         File dataFolder = new File(parentFolder);
-        if (!dataFolder.exists()) {
-            if (!dataFolder.mkdir()) {
-                System.out.println("Ошибка при создании папки \"data\".");
-                return null;
-            }
-        }
+        createPath(parentFolder);
 
         File currentFolder = new File(dataFolder, currentDate);
         if (currentFolder.exists()) {
@@ -34,6 +29,17 @@ public class CustomFileWriter {
         } else {
             System.out.println("Ошибка при создании каталога \"" + currentDate + "\" в папке \"data\".");
             return null;
+        }
+    }
+
+    public void createPath(String path) {
+        File directory = new File(path);
+        if (!directory.exists()) {
+            if (directory.mkdirs()) {
+                System.out.println("Каталог \"" + path + "\" успешно создан.");
+            } else {
+                System.out.println("Ошибка при создании каталога \"" + path + "\".");
+            }
         }
     }
 
