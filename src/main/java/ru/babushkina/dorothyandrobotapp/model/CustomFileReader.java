@@ -11,7 +11,7 @@ public class CustomFileReader {
             return Files.readAllLines(Path.of(filePath));
         } catch (IOException e) {
             System.out.println("Ошибка при чтении файла: " + e.getMessage());
-            return null;
+            throw new RuntimeException("Ошибка при чтении файла", e);
         }
     }
 }
